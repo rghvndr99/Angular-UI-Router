@@ -26,6 +26,23 @@ There are certain other benefits of UI route that I will describe later.
 1. It uses named template view while its not provided in ng-route.
 1. For link, ui-route uses 'ui-sref' but ng-route uses 'href'.
 1. In ui-route, you can get parameter using '$stateParams.id' while in ng-route ,you have to use '$routeParams.id'
+## Relative named view
+
+![](https://github.com/rghvndr99/Angular-UI-Router/blob/master/rootnaming.PNG)
+
+Notice that the view names are now specified as absolute names, as opposed to the relative name. It is targeting the 'filters', 'tabledata', and 'graph' views located in the root unnamed template. Since it's unnamed, there is nothing following the '@'. The root unnamed template is my index.html.Keep in mind that when ever @ is used, it always targets to absolute path.
+
+Lets take another Example.
+  I have three html files.See the attached code snippet.
+![](https://github.com/rghvndr99/Angular-UI-Router/blob/master/index.PNG)
+
+![](https://github.com/rghvndr99/Angular-UI-Router/blob/master/contact.PNG)
+
+![](https://github.com/rghvndr99/Angular-UI-Router/blob/master/contactDetail.PNG)
+
+### Now see the attached code snippet.You are in contactdetail.html and targeting different views. 
+
+![](https://github.com/rghvndr99/Angular-UI-Router/blob/master/relativeVsAbsolute.PNG)
 
 # code explanation
  The routing of an angular app is written in config page.The whole code is shown below
@@ -54,10 +71,10 @@ So for sub-state, the path will be like 'parentstate.childstate'.As example for 
 
 ![](https://github.com/rghvndr99/Angular-UI-Router/blob/master/nested%20routing.PNG)  
 
-4.Named Route
+4.Named Route  
 In this app, the aboutus tab has two inner but named views  
- 
- a)columnOnefor table  
+
+ a)columnOne for table  
  b)columnTwo for paragraph  
  
 So for sub-state, the path will be like 'namedView@parentstate'.As example for table sublist,the state will be 'columnOne@aboutus'.But notice that both state will render at a time.  
